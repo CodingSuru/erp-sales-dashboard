@@ -226,7 +226,9 @@ layout = html.Div([
         'minHeight': '100vh',
         'background': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         'padding': '50px 20px'
-    })
+    }),
+    
+    dcc.Location(id='csv-redirect', refresh=True)
 ])
 
 @callback(
@@ -286,12 +288,14 @@ def handle_csv_upload(contents, filename):
         ], color="danger"), True
 
 @callback(
-    Output("csv-proceed-btn", "children"),
+    Output("csv-redirect", "href"),
     Input("csv-proceed-btn", "n_clicks"),
     prevent_initial_call=True
 )
 def proceed_from_csv(n_clicks):
-    return dcc.Location(pathname="/sales", id="redirect-to-sales")
+    if n_clicks:
+        return "/sales"
+    return ""
 
 @callback(
     [Output("connection-status", "children"),
