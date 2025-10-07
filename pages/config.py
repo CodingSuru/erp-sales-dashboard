@@ -185,26 +185,25 @@ layout = html.Div([
                             dcc.Upload(
                                 id='upload-csv',
                                 children=html.Div([
-                                    html.I(className="fas fa-cloud-upload-alt", style={'fontSize': '3rem', 'color': '#667eea'}),
+                                    html.I(className="fas fa-cloud-upload-alt", style={'fontSize': '2.5rem', 'color': '#667eea'}),
                                     html.Br(),
-                                    html.Br(),
-                                    html.H5('Drag and Drop or Click to Select CSV File'),
-                                    html.P('Supported format: CSV', className="text-muted")
-                                ]),
+                                    html.H6('Drag and Drop or Click to Select CSV File', style={'marginTop': '15px', 'marginBottom': '5px'}),
+                                    html.P('Supported format: CSV', className="text-muted small")
+                                ], style={'paddingTop': '30px'}),
                                 style={
                                     'width': '100%',
-                                    'height': '200px',
-                                    'lineHeight': '200px',
+                                    'height': '150px',
                                     'borderWidth': '2px',
                                     'borderStyle': 'dashed',
                                     'borderRadius': '10px',
                                     'textAlign': 'center',
-                                    'cursor': 'pointer'
+                                    'cursor': 'pointer',
+                                    'marginBottom': '20px'
                                 },
                                 multiple=False
                             ),
                             
-                            html.Div(id="csv-upload-status", className="mt-4"),
+                            html.Div(id="csv-upload-status", className="mb-3"),
                             
                             html.Div([
                                 dbc.Button(
@@ -215,7 +214,7 @@ layout = html.Div([
                                     disabled=True,
                                     style={'borderRadius': '25px', 'paddingLeft': '30px', 'paddingRight': '30px'}
                                 )
-                            ], className="text-center mt-4")
+                            ], className="text-center")
                         ])
                     ], style={'borderRadius': '15px', 'border': 'none', 'boxShadow': '0 10px 30px rgba(0,0,0,0.1)'})
                 ], label="Upload CSV", tab_id="csv-tab")
