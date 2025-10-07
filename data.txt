@@ -1,0 +1,12 @@
+# === Configuration ===
+DB_USER = 'NEWTON_ERP'
+DB_PASS = 'NEWTON'
+DB_HOST = '192.168.1.206'
+DB_PORT = '1521'
+DB_NAME = 'ORCL'
+
+
+
+okey so make sure that when i upload or put the data inside the config page that data should be called here and then will be get processed so that anyone can use it properly 
+
+provide me the udapted code only nothing esle 
